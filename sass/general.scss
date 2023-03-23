@@ -28,6 +28,10 @@ body {
 }
 
 @media (min-width: $desktop) {
+  html {
+    background-color: $clr-500;
+  }
+  
   body {
     padding: 0 10.313rem;
 

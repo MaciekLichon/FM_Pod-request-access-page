@@ -1,0 +1,186 @@
+@import './variables.scss';
+@import './reset.scss';
+@import './general.scss';
+
+.header {
+  padding-top: 3.875rem;
+  margin-bottom: 3.563rem;
+  
+  .header__logo { margin: 0 auto; }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: $fs-header-mobile;
+  line-height: $lh-header-mobile;
+  font-weight: $fw-light;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+  color: $clr-100;
+
+  span {
+    color: $clr-accent;
+  }
+}
+
+.hero__description {
+  margin-bottom: 2.063rem;
+  font-weight: $fw-medium;
+}
+
+.hero__form {
+  order: 3;
+  position: relative;
+
+  .hero__input, .hero__submitButton {
+    display: block;
+    width: 100%;
+    padding: 0.563rem 2rem;
+    font-size: $fs-button;
+    line-height: $lh-button;
+    border-radius: 28px;
+    border: none;
+    background: none;
+  }
+
+  .hero__input {
+    margin-bottom: 1rem;
+    background-color: $clr-400;
+    color: $clr-100;
+    
+    &::placeholder {
+      color: $clr-100-transparent;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .hero__formErrorMsg {
+    position: absolute;
+    color: $clr-error;
+    font-size: 12px;
+    line-height: 1.19;
+    bottom: -20px;
+    left: 32px;
+    visibility: hidden;
+
+    &.error { visibility: visible; }
+  }
+
+  .hero__submitButton {
+    background-color: $clr-accent;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $clr-hover;
+    }
+  }
+}
+
+.hero__companies {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  margin-bottom: 3rem;
+
+  .hero__companyIcon {
+    background-color: $clr-300;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+
+  .icon-spotify { width: 56px; height: 17px; mask-image: url('../assets/desktop/spotify.svg'); }
+  .icon-apple { width: 45px; height: 17px; mask-image: url('../assets/desktop/apple-podcast.svg'); }
+  .icon-google { width: 73px; height: 11px; mask-image: url('../assets/desktop/google-podcasts.svg'); }
+  .icon-pocket { width: 77px; height: 15px; mask-image: url('../assets/desktop/pocket-casts.svg'); }
+}
+
+
+@media (min-width: $tablet) {
+
+  .header {
+    padding-top: 3.125rem;
+    margin-bottom: 9.5rem;
+    .header__logo { margin: 0; }
+  }
+
+  .hero {
+    max-width: 635px;
+    background-color: $clr-500;
+    padding-top: 5.813rem;
+    text-align: left;
+
+    .hero__title {
+      font-size: $fs-header-tablet;
+      line-height: $lh-header-tablet;
+      margin-bottom: 1.938rem;
+    }
+
+    .hero__description {
+      font-size: $fs-regular-tablet;
+      line-height: $lh-regular-tablet;
+      max-width: 445px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero__form {
+      order: unset;
+      margin-bottom: 4rem;
+      max-width: 427px;
+      position: relative;
+
+      .hero__input { 
+        padding: 0.875rem 2rem;
+        margin: 0; 
+      }
+
+      .hero__submitButton {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        padding: 0.563rem 1.688rem;
+      }
+    }
+
+    .hero__companies {
+      margin: 0;
+      max-width: 536px;
+      padding: 0;
+
+      .icon-spotify { width: 96px; height: 29px; }
+      .icon-apple { width: 78px; height: 29px; }
+      .icon-google { width: 125px; height: 18px; }
+      .icon-pocket { width: 129px; height: 26px; }
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .header {
+    padding-top: 6.375rem;
+    margin-bottom: 6.438rem;
+  }
+
+  .hero {
+    max-width: 723px;
+    padding-top: 5.5rem;
+    padding-bottom: 3.25rem;
+
+    .hero__title {
+      font-size: $fs-header-desktop;
+      line-height: $lh-header-desktop;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

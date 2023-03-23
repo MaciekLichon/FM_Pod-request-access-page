@@ -1,0 +1,38 @@
+@import './variables.scss';
+
+body {
+  font-family: $ff-regular;
+  font-weight: $fw-regular;
+  font-size: $fs-regular-mobile;
+  line-height: $lh-regular-mobile;
+  color: $clr-200;
+
+  padding: 0 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  background-image: linear-gradient($clr-500-transparent, $clr-500-transparent), url('../assets/mobile/image-host.jpg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+}
+
+@media (min-width: $tablet) {
+  body {
+    padding: 0 2.5rem;
+
+    background-color: $clr-500;
+    background-image: url('../assets/tablet/image-host.jpg'), url('../assets/desktop/bg-pattern-dots.svg');
+    background-size: auto, auto;
+    background-position: top right, 30px bottom;
+  }
+}
+
+@media (min-width: $desktop) {
+  body {
+    padding: 0 10.313rem;
+
+    background-image: url('../assets/desktop/bg-pattern-dots.svg'), url('../assets/desktop/image-host.jpg');
+    // background-position: top 718px right 0, top 130px right 0; 
+    background-position: top calc(50% + 320px) right 0, top 50% right 0;
+  }
+}
